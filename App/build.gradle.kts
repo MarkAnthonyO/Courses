@@ -18,7 +18,7 @@ java {
 
 tasks.withType<Jar>() {
     manifest {
-        attributes("Courses", Pair("Main-Class", "Main.Main"))
+        attributes(Pair("Main-Class", "Main.Main"))
     }
 }
 
