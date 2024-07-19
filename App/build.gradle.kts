@@ -16,6 +16,10 @@ java {
     }
 }
 
+dependencies {
+    implementation(files("libs/Courses-API-v0.0.1.jar"))
+}
+
 tasks.withType<Jar>() {
     manifest {
         attributes(Pair("Main-Class", "Main.Main"))
