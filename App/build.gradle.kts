@@ -1,5 +1,8 @@
+import org.jetbrains.kotlin.serialization.builtins.main
+
 plugins {
     id("java")
+    kotlin("jvm")
 }
 
 repositories {
@@ -17,13 +20,15 @@ java {
 }
 
 dependencies {
-    implementation(files("libs/Courses-API-v0.0.1.jar"))
+    implementation(files("libs/Courses-API-v0.0.3.jar"))
+    implementation(kotlin("stdlib-jdk8"))
+    implementation("org.xerial:sqlite-jdbc:3.46.0.0")
 }
 
 tasks.withType<Jar>() {
     manifest {
-        attributes(Pair("Main-Class", "Main.Main"))
+        attributes(Pair("Main-Class", "MainKt"))
     }
 }
 
-version = "v0.0.1"
+version = "v0.0.2"
