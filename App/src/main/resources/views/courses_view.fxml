@@ -25,4 +25,10 @@
          <Bloom />
       </effect>
    </Button>
+
+   <Button focusTraversable="false" layoutY="2.0" mnemonicParsing="false" onAction="#createCourse" prefHeight="30.0" prefWidth="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="40.0">
+      <effect>
+         <Bloom />
+      </effect>
+   </Button>
 </AnchorPane>
