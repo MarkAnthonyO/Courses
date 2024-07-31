@@ -13,8 +13,8 @@ class Window : Stage() {
     init {
         title = "Courses"
 
-        minWidth = 854.0
-        minHeight = 480.0
+        minWidth = 1280.0
+        minHeight = 720.0
 
         width = 1280.0
         height = 720.0
