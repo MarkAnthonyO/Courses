@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.TeacherCreatorView">
+
+    <Button onAction="#back" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffaa00; -fx-background-radius: 0; -fx-text-fill: #fff;" text="" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <font>
+         <Font name="Font Awesome 6 Free Solid" size="16.0" />
+      </font></Button>
+   <AnchorPane layoutX="490.0" layoutY="194.0" prefHeight="332.0" prefWidth="300.0" style="-fx-background-color: #ffaa00; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 1; -fx-border-color: #737373;" AnchorPane.topAnchor="194.0">
+      <children>
+      
+          <Button alignment="CENTER" layoutY="374.0" onAction="#addCourse" style="-fx-border-width: 1; -fx-border-color: #737373; -fx-border-radius: 0 0 8 8; -fx-background-radius: 0 0 8 8; -fx-background-color: #ffffff; -fx-cursor: hand;" text="Registrar" textAlignment="CENTER" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0">
+            <font>
+               <Font name="JetBrainsMono NF Regular" size="14.0" />
+            </font>
+         </Button>
+      
+          <TextField fx:id="txtName" focusTraversable="false" layoutX="11.0" layoutY="33.0" prefHeight="25.0" promptText="Nombre" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="33.0">
+            <font>
+               <Font name="JetBrainsMono NF Regular" size="16.0" />
+            </font>
+         </TextField>
+         <Label layoutX="18.0" layoutY="14.0" style="-fx-text-fill: #ffffff;" text="Nombre" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <font>
+               <Font name="JetBrainsMono NF Bold" size="16.0" />
+            </font>
+         </Label>
+         <Label layoutX="12.0" layoutY="66.0" style="-fx-text-fill: #ffffff;" text="Apellido" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="66.0">
+            <font>
+               <Font name="JetBrainsMono NF Bold" size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="txtLastname" focusTraversable="false" layoutX="11.0" layoutY="89.0" prefHeight="32.0" prefWidth="274.0" promptText="Apellido" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="89.0">
+            <font>
+               <Font name="JetBrainsMono NF Regular" size="16.0" />
+            </font>
+         </TextField>
+         <Label layoutX="11.0" layoutY="122.0" style="-fx-text-fill: #ffffff;" text="Edad" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="122.0">
+            <font>
+               <Font name="JetBrainsMono NF Bold" size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="txtAge" focusTraversable="false" layoutX="11.0" layoutY="145.0" prefHeight="32.0" prefWidth="274.0" promptText="Edad" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <font>
+               <Font name="JetBrainsMono NF Regular" size="16.0" />
+            </font>
+         </TextField>
+         <Label layoutX="11.0" layoutY="177.0" style="-fx-text-fill: #ffffff;" text="Telefono" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <font>
+               <Font name="JetBrainsMono NF Bold" size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="txtTelephone" focusTraversable="false" layoutX="11.0" layoutY="200.0" prefHeight="32.0" prefWidth="274.0" promptText="Telefono" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <font>
+               <Font name="JetBrainsMono NF Regular" size="16.0" />
+            </font>
+         </TextField>
+         <Label layoutX="11.0" layoutY="232.0" style="-fx-text-fill: #ffffff;" text="Direccion" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <font>
+               <Font name="JetBrainsMono NF Bold" size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="txtAddress" focusTraversable="false" layoutX="11.0" layoutY="255.0" prefHeight="32.0" prefWidth="274.0" promptText="Telefono" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <font>
+               <Font name="JetBrainsMono NF Regular" size="16.0" />
+            </font>
+         </TextField>
+      </children>
+   </AnchorPane>
+
+</AnchorPane>
