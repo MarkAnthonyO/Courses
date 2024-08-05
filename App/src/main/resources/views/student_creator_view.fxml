@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.TeacherCreatorView">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.StudentCreatorView">
 
     <Button onAction="#back" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffaa00; -fx-background-radius: 0; -fx-text-fill: #fff;" text="" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <font>
@@ -15,7 +15,7 @@
    <AnchorPane layoutX="490.0" layoutY="194.0" prefHeight="332.0" prefWidth="300.0" style="-fx-background-color: #ffaa00; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 1; -fx-border-color: #737373;" AnchorPane.topAnchor="194.0">
       <children>
       
-          <Button alignment="CENTER" layoutY="374.0" onAction="#addCourse" style="-fx-border-width: 1; -fx-border-color: #737373; -fx-border-radius: 0 0 8 8; -fx-background-radius: 0 0 8 8; -fx-background-color: #ffffff; -fx-cursor: hand;" text="Registrar" textAlignment="CENTER" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0">
+          <Button alignment="CENTER" layoutY="374.0" onAction="#addStudent" style="-fx-border-width: 1; -fx-border-color: #737373; -fx-border-radius: 0 0 8 8; -fx-background-radius: 0 0 8 8; -fx-background-color: #ffffff; -fx-cursor: hand;" text="Registrar" textAlignment="CENTER" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0">
             <font>
                <Font name="JetBrainsMono NF Regular" size="14.0" />
             </font>
@@ -66,12 +66,17 @@
                <Font name="JetBrainsMono NF Bold" size="16.0" />
             </font>
          </Label>
-         <TextField fx:id="txtAddress" focusTraversable="false" layoutX="11.0" layoutY="255.0" prefHeight="32.0" prefWidth="274.0" promptText="Telefono" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <TextField fx:id="txtAddress" focusTraversable="false" layoutX="11.0" layoutY="255.0" prefHeight="32.0" prefWidth="274.0" promptText="Direccion" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
             <font>
                <Font name="JetBrainsMono NF Regular" size="16.0" />
             </font>
          </TextField>
       </children>
    </AnchorPane>
+   <Label alignment="CENTER" layoutX="40.0" prefHeight="40.0" style="-fx-text-fill: #ffaa00;" text="| Crear estudiante |" textAlignment="CENTER" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+      <font>
+         <Font name="JetBrainsMono NF Regular" size="16.0" />
+      </font>
+   </Label>
 
 </AnchorPane>

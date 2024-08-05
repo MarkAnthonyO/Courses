@@ -15,6 +15,8 @@ class CourseCreatorView {
 
     @FXML
     lateinit var txtName : TextField
+    @FXML
+    lateinit var txtTeacher: TextField
 
     fun addCourse(event: ActionEvent) {
         val course = Course()
@@ -35,9 +37,8 @@ class CourseCreatorView {
 
     fun selectTeacher(event: ActionEvent) {
         val popWindow = Stage()
-        popWindow.scene = Scene(View("teacher_selector").getView())
+        popWindow.scene = Scene(View("teacher_selector_view").getView())
         popWindow.showAndWait()
-
 
         if (Window.getWindow().userData == null) {
             println("No se especifico ningun profesor")
@@ -45,7 +46,7 @@ class CourseCreatorView {
         }
 
         val teacher = (Window.getWindow().userData as Teacher)
-        txtName.text = teacher.name
+        txtTeacher.text = teacher.name
     }
 
     fun back(event: ActionEvent) {

@@ -1,18 +1,14 @@
 package views
 
-import components.Teacher
-import generator.TeacherGenerator
-import getter.TeacherGetter
+import components.Student
+import generator.StudentGenerator
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
-import javafx.fxml.Initializable
 import javafx.scene.control.Alert
 import javafx.scene.control.TextField
 import window.Window
-import java.net.URL
-import java.util.*
 
-class TeacherCreatorView {
+class StudentCreatorView {
     @FXML
     lateinit var txtName : TextField
     @FXML
@@ -24,7 +20,7 @@ class TeacherCreatorView {
     @FXML
     lateinit var txtAddress : TextField
 
-    fun addTeacher(event: ActionEvent) {
+    fun addStudent(event: ActionEvent) {
         if (txtName.text.equals("") || txtLastname.text.equals("") || txtAge.text.equals("") || txtTelephone.text.equals("") || txtAddress.text.equals("")) {
             showMessage()
             return
@@ -38,8 +34,8 @@ class TeacherCreatorView {
         println("Datos completos")
 
         try {
-            val teacher = Teacher(1, txtName.text, txtLastname.text, Integer.parseInt(txtAge.text), txtTelephone.text, txtAddress.text)
-            TeacherGenerator.generate(teacher)
+            val student = Student(1, txtName.text, txtLastname.text, Integer.parseInt(txtAge.text), txtTelephone.text, txtAddress.text)
+            StudentGenerator.generate(student)
         } catch (ex : Exception) {
             showError(ex.message)
             println(ex.message)
@@ -47,7 +43,7 @@ class TeacherCreatorView {
         }
 
         showConfirmation()
-        returnTeacherView()
+        returnStudentsView()
     }
 
     private fun showMessage() {
@@ -67,7 +63,7 @@ class TeacherCreatorView {
     private fun showConfirmation() {
         val alert = Alert(Alert.AlertType.INFORMATION)
         alert.title = "Listo"
-        alert.contentText = "Se ha registrado al alumno, regresando a la vista de maestros"
+        alert.contentText = "Se ha registrado al alumno, regresando a la vista de alumnos"
         alert.showAndWait()
     }
 
@@ -78,11 +74,11 @@ class TeacherCreatorView {
         alert.showAndWait()
     }
 
-    private fun returnTeacherView() {
-        Window.getWindow().changeToView("teachers_view")
+    private fun returnStudentsView() {
+        Window.getWindow().changeToView("students_view")
     }
 
     fun back(event: ActionEvent) {
-        returnTeacherView()
+        returnStudentsView()
     }
 }

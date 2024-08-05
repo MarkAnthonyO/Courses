@@ -20,7 +20,7 @@ java {
 }
 
 dependencies {
-    implementation(files("libs/Courses-API-v0.0.4.jar"))
+    implementation(files("libs/Courses-API-v0.0.5.jar"))
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.xerial:sqlite-jdbc:3.46.0.0")
 }
