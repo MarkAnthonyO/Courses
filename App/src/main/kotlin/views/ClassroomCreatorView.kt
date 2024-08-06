@@ -58,6 +58,6 @@ class ClassroomCreatorView {
     }
 
     private fun returnToClassroomView() {
-        Window.getWindow().changeToView("classroom_view")
+        Window.getWindow().changeToView("classrooms_view")
     }
 }

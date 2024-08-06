@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.CoursesView">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ClassroomsView">
    <TextField fx:id="txtQuery" focusTraversable="false" layoutX="10.0" layoutY="44.0" onKeyPressed="#query" prefHeight="30.0" prefWidth="1255.0" promptText="Buscar curso" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="54.0">
       <font>
          <Font name="JetBrainsMono NF Regular" size="16.0" />
@@ -18,13 +18,13 @@
       <content>
          <VBox fx:id="list" prefWidth="100.0" />
       </content></ScrollPane>
-   <Label alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="34.0" prefWidth="1260.0" style="-fx-text-fill: #ffaa00;" text="Cursos" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+   <Label alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="34.0" prefWidth="1260.0" style="-fx-text-fill: #ffaa00;" text="Salones" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
       <font>
          <Font name="JetBrainsMono NF Regular" size="25.0" />
       </font>
    </Label>
 
-   <Button focusTraversable="false" layoutX="10.0" layoutY="86.0" mnemonicParsing="false" onAction="#createCourse" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffaa00; -fx-text-fill: #fff;" text="+" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="96.0">
+   <Button focusTraversable="false" layoutX="10.0" layoutY="86.0" mnemonicParsing="false" onAction="#createClassroom" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffaa00; -fx-text-fill: #fff;" text="+" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="96.0">
       <font>
          <Font name="Font Awesome 6 Free Solid" size="16.0" />
       </font>
@@ -32,21 +32,6 @@
    <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" onAction="#back" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffaa00; -fx-background-radius: 0; -fx-text-fill: #fff; -fx-cursor: hand;" text="" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <font>
          <Font name="Font Awesome 6 Free Solid" size="16.0" />
-      </font>
-   </Button>
-   <Button focusTraversable="false" layoutX="50.0" layoutY="96.0" mnemonicParsing="false" onAction="#showStudentsView" prefHeight="40.0" style="-fx-background-color: #ffaa00; -fx-text-fill: #fff;" text="Estudiantes" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="96.0">
-      <font>
-         <Font name="JetBrainsMono NF Regular" size="17.0" />
-      </font>
-   </Button>
-   <Button focusTraversable="false" layoutX="195.0" layoutY="96.0" mnemonicParsing="false" onAction="#showTeachersView" prefHeight="40.0" style="-fx-background-color: #ffaa00; -fx-text-fill: #fff;" text="Profesores" AnchorPane.leftAnchor="205.0" AnchorPane.topAnchor="96.0">
-      <font>
-         <Font name="JetBrainsMono NF Regular" size="17.0" />
-      </font>
-   </Button>
-   <Button focusTraversable="false" layoutX="329.0" layoutY="96.0" mnemonicParsing="false" onAction="#showClassroomsView" prefHeight="40.0" style="-fx-background-color: #ffaa00; -fx-text-fill: #fff;" text="Salones" AnchorPane.leftAnchor="339.0" AnchorPane.topAnchor="96.0">
-      <font>
-         <Font name="JetBrainsMono NF Regular" size="17.0" />
       </font>
    </Button>
 </AnchorPane>

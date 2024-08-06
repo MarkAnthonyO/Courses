@@ -30,9 +30,21 @@ class CourseCard(private var course: Course, private var coursesView: CoursesVie
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         txtCourse.text = course.name
-        txtTeacher.text = "Impartido por: ${course.teacher.name} ${course.teacher.lastname}"
+
+        if (course.teacher != null) {
+            txtTeacher.text = "Impartido por: ${course.teacher.name} ${course.teacher.lastname}"
+        } else {
+            txtTeacher.text = "No hay maestro asignado"
+        }
+
         txtNumStudents.text = "Numero de estudiantes inscritos: ${course.students.size} personas"
-        txtClassroom.text = "Salon: ${course.classroom.name}"
+
+        if (course.classroom != null) {
+            txtClassroom.text = "Salon: ${course.classroom.name}"
+        } else {
+            txtClassroom.text = "Salon sin determinar"
+        }
+
 
         btnD.setOnAction { e ->
             delete()
