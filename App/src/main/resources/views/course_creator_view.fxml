@@ -10,11 +10,11 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.CourseCreatorView">
 
-    <Button onAction="#back" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffaa00; -fx-background-radius: 0; -fx-text-fill: #fff;" text="" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <Button onAction="#back" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffaa00; -fx-background-radius: 0; -fx-text-fill: #fff; -fx-cursor: hand;" text="" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <font>
          <Font name="Font Awesome 6 Free Solid" size="16.0" />
       </font></Button>
-   <AnchorPane layoutX="490.0" layoutY="110.0" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: #ffaa00; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 1; -fx-border-color: #737373;" AnchorPane.topAnchor="110.0">
+   <AnchorPane layoutX="415.0" layoutY="110.0" prefHeight="500.0" prefWidth="450.0" style="-fx-background-color: #ffaa00; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 1; -fx-border-color: #737373;" AnchorPane.topAnchor="110.0">
       <children>
       
           <Button alignment="CENTER" layoutY="374.0" onAction="#addCourse" style="-fx-border-width: 1; -fx-border-color: #737373; -fx-border-radius: 0 0 8 8; -fx-background-radius: 0 0 8 8; -fx-background-color: #ffffff; -fx-cursor: hand;" text="Registrar" textAlignment="CENTER" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0">
@@ -38,7 +38,7 @@
                <Font name="JetBrainsMono NF Bold" size="16.0" />
             </font>
          </Label>
-         <TextField fx:id="txtTeacher" editable="false" focusTraversable="false" layoutX="12.0" layoutY="98.0" prefHeight="32.0" prefWidth="233.0" promptText="Maestro" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="97.0">
+         <TextField fx:id="txtTeacher" editable="false" focusTraversable="false" layoutX="12.0" layoutY="98.0" prefHeight="32.0" prefWidth="380.0" promptText="Maestro" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="97.0">
             <font>
                <Font name="JetBrainsMono NF Regular" size="16.0" />
             </font>
@@ -48,27 +48,27 @@
                <Font name="JetBrainsMono NF Bold" size="16.0" />
             </font>
          </Label>
-         <Button alignment="CENTER" focusTraversable="false" layoutX="254.0" layoutY="97.0" mnemonicParsing="false" onAction="#selectTeacher" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #ffffff; -fx-text-fill: #ffaa00;" text="" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="97.0">
+         <Button alignment="CENTER" focusTraversable="false" layoutX="254.0" layoutY="97.0" mnemonicParsing="false" onAction="#selectTeacher" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #ffffff; -fx-text-fill: #ffaa00; -fx-cursor: hand;" text="" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="97.0">
             <font>
                <Font name="Font Awesome 6 Free Regular" size="16.0" />
             </font>
          </Button>
-         <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="12.0" layoutY="158.0" prefHeight="106.0" prefWidth="278.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="157.0">
+         <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" layoutX="13.0" layoutY="159.0" prefHeight="217.0" prefWidth="276.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="158.0">
             <content>
-               <VBox disable="true" fillWidth="false" prefHeight="200.0" prefWidth="100.0" />
+               <VBox fx:id="listStudent" fillWidth="false" prefHeight="200.0" prefWidth="100.0" />
             </content>
          </ScrollPane>
-         <Button layoutX="12.0" layoutY="272.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="276.0" style="-fx-background-color: #fff;" text="Seleccionar" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
+         <Button layoutX="13.0" layoutY="385.0" mnemonicParsing="false" onAction="#selectStudents" prefHeight="24.0" prefWidth="276.0" style="-fx-background-color: #fff; -fx-cursor: hand;" text="Seleccionar" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
             <font>
                <Font name="JetBrainsMono NF Regular" size="16.0" />
             </font>
          </Button>
-         <TextField fx:id="txtName11" editable="false" focusTraversable="false" layoutX="12.0" layoutY="317.0" prefHeight="32.0" prefWidth="233.0" promptText="Salon" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="11.0">
+         <TextField fx:id="txtName11" editable="false" focusTraversable="false" layoutX="12.0" layoutY="426.0" prefHeight="32.0" prefWidth="380.0" promptText="Salon" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="11.0">
             <font>
                <Font name="JetBrainsMono NF Regular" size="16.0" />
             </font>
          </TextField>
-         <Button alignment="CENTER" focusTraversable="false" layoutX="259.0" layoutY="317.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #ffffff; -fx-text-fill: #ffaa00;" text="" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="10.0">
+         <Button alignment="CENTER" focusTraversable="false" layoutX="253.0" layoutY="427.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #ffffff; -fx-text-fill: #ffaa00; -fx-cursor: hand;" text="" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="10.0">
             <font>
                <Font name="Font Awesome 6 Free Regular" size="16.0" />
             </font>

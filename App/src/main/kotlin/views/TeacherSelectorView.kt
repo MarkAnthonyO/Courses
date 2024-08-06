@@ -59,7 +59,7 @@ class TeacherSelectorView : Initializable {
 
         for ( teacher : Teacher in listOfTeacher) {
             val teacherButton = SelectorTeacherButton(teacher)
-            VBox.setMargin(teacherButton, Insets(10.0, 10.0, 10.0, 10.0))
+            VBox.setMargin(teacherButton, Insets(10.0, 10.0, 0.0, 10.0))
             list.children.add(teacherButton)
         }
     }
