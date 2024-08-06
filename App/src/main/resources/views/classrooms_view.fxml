@@ -29,6 +29,11 @@
          <Font name="Font Awesome 6 Free Solid" size="16.0" />
       </font>
    </Button>
+   <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" onAction="#back" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffaa00; -fx-background-radius: 0; -fx-text-fill: #fff; -fx-cursor: hand;" text="" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <font>
+         <Font name="Font Awesome 6 Free Solid" size="16.0" />
+      </font>
+   </Button>
    <Button focusTraversable="false" layoutX="50.0" layoutY="96.0" mnemonicParsing="false" onAction="#showStudentsView" prefHeight="40.0" style="-fx-background-color: #ffaa00; -fx-text-fill: #fff;" text="Estudiantes" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="96.0">
       <font>
          <Font name="JetBrainsMono NF Regular" size="17.0" />

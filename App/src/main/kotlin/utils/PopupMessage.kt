@@ -16,6 +16,11 @@ class PopupMessage(title: String, message : String, type: PopupMessageType) : Al
                 alertType = AlertType.INFORMATION
                 this.contentText = message
             }
+
+            PopupMessageType.CONFIRMATION -> {
+                alertType = AlertType.CONFIRMATION
+                this.contentText = message
+            }
         }
     }
 }

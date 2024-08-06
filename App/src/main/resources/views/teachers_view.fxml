@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.StudentsView">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.TeachersView">
    <TextField fx:id="txtQuery" focusTraversable="false" layoutX="10.0" layoutY="44.0" onKeyPressed="#query" prefHeight="30.0" prefWidth="1255.0" promptText="Buscar curso" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="54.0">
       <font>
          <Font name="JetBrainsMono NF Regular" size="16.0" />
@@ -18,13 +18,13 @@
       <content>
          <VBox fx:id="list" prefWidth="100.0" />
       </content></ScrollPane>
-   <Label alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="34.0" prefWidth="1260.0" style="-fx-text-fill: #ffaa00;" text="Estudiantes" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+   <Label alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="34.0" prefWidth="1260.0" style="-fx-text-fill: #ffaa00;" text="Maestros" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
       <font>
          <Font name="JetBrainsMono NF Regular" size="25.0" />
       </font>
    </Label>
 
-   <Button focusTraversable="false" layoutX="10.0" layoutY="86.0" mnemonicParsing="false" onAction="#createStudent" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffaa00; -fx-text-fill: #fff;" text="+" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="96.0">
+   <Button focusTraversable="false" layoutX="10.0" layoutY="86.0" mnemonicParsing="false" onAction="#createTeacher" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffaa00; -fx-text-fill: #fff;" text="+" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="96.0">
       <font>
          <Font name="Font Awesome 6 Free Solid" size="16.0" />
       </font>

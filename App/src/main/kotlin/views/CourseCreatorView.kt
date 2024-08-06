@@ -31,7 +31,7 @@ class CourseCreatorView {
     lateinit var txtClassroom : TextField
 
     private var teacher : Teacher? = null
-    private val students : ArrayList<Student> = ArrayList()
+    private var students : ArrayList<Student> = ArrayList()
     private var classroom : Classroom? = null
 
     fun addCourse(event: ActionEvent) {
@@ -41,11 +41,18 @@ class CourseCreatorView {
         }
 
         try {
-            val id = CourseGetter.getAll().last.id + 1
+            val id = if(CourseGetter.getAll().isEmpty()) {
+                0
+            } else {
+                CourseGetter.getAll().last().id + 1
+            }
+
             val course = Course(id, txtName.text, teacher, students, classroom)
             CourseGenerator.generate(course)
+            println("Id de curso: ${CourseGetter.getAll().last().id}")
+            StudentListGenerator.generate(CourseGetter.getAll().last(), students)
         } catch (ex : Exception) {
-            showErrorMessage(ex.message)
+            showErrorMessage("${ex.message} ${ex.localizedMessage}")
             return
         }
 
@@ -79,7 +86,7 @@ class CourseCreatorView {
         popWindow.scene = Scene(View("students_selector_view").getView())
         popWindow.showAndWait()
 
-        val students : ArrayList<Student> =  Window.getWindow().userData as ArrayList<Student>
+        students =  Window.getWindow().userData as ArrayList<Student>
         Window.getWindow().userData = null
 
         if (students.isEmpty()) {

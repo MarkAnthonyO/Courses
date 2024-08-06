@@ -1,11 +1,16 @@
 package components
 
+import deleter.CourseDeleter
+import getter.CourseGetter
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Button
+import javafx.scene.control.ButtonType
 import javafx.scene.control.Label
 import javafx.scene.layout.VBox
+import utils.PopupMessage
+import utils.PopupMessageType
 import views.CoursesView
 import java.net.URL
 import java.util.*
@@ -35,6 +40,15 @@ class CourseCard(private var course: Course, private var coursesView: CoursesVie
     }
 
     fun delete()  {
-        coursesView.list.children.removeAll(coursesView.list.children)
+        val pop = PopupMessage("Advertencia", "Se va a borrar el curso: ${course.name}", PopupMessageType.CONFIRMATION)
+        pop.showAndWait()
+
+        if (pop.result != ButtonType.OK) {
+            return
+        }
+
+        println("Se va a borrar")
+        CourseDeleter.delete(course.id)
+        coursesView.queryCourses(CourseGetter.getAll())
     }
 }

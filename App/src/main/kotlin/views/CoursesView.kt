@@ -43,7 +43,7 @@ class CoursesView : Initializable{
             queryCourses(CourseGetter.get(txtQuery.text))
     }
 
-    private fun queryCourses(courses: ArrayList<Course> ) {
+    fun queryCourses(courses: ArrayList<Course> ) {
         list.children.removeAll(list.children)
         for (course in courses) {
             val loader = Component<AnchorPane, CourseCard>("course_card", CourseCard(course, this))
@@ -53,8 +53,15 @@ class CoursesView : Initializable{
         }
     }
 
-    fun back(event: ActionEvent) {
-        val w = Window.getWindow()
-        w.changeToView("students_view")
+    fun showStudentsView(event: ActionEvent) {
+        Window.getWindow().changeToView("students_view")
+    }
+
+    fun showTeachersView(event: ActionEvent) {
+        Window.getWindow().changeToView("teachers_view")
+    }
+
+    fun showClassroomsView(event: ActionEvent) {
+        Window.getWindow().changeToView("classrooms_view")
     }
 }
