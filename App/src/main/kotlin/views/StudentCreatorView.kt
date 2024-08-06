@@ -22,7 +22,7 @@ class StudentCreatorView {
 
     fun addStudent(event: ActionEvent) {
         if (txtName.text.equals("") || txtLastname.text.equals("") || txtAge.text.equals("") || txtTelephone.text.equals("") || txtAddress.text.equals("")) {
-            showMessage()
+            showMissingDataMessage()
             return
         }
 
@@ -37,23 +37,23 @@ class StudentCreatorView {
             val student = Student(1, txtName.text, txtLastname.text, Integer.parseInt(txtAge.text), txtTelephone.text, txtAddress.text)
             StudentGenerator.generate(student)
         } catch (ex : Exception) {
-            showError(ex.message)
+            showErrorMessage(ex.message)
             println(ex.message)
             return
         }
 
         showConfirmation()
-        returnStudentsView()
+        returnToStudentsView()
     }
 
-    private fun showMessage() {
+    private fun showMissingDataMessage() {
         val alert = Alert(Alert.AlertType.WARNING)
         alert.title = "Adevertencia"
         alert.contentText = "Faltan datos en el formulario"
         alert.showAndWait()
     }
 
-    private fun showError(message: String?) {
+    private fun showErrorMessage(message: String?) {
         val alert = Alert(Alert.AlertType.WARNING)
         alert.title = "Adevertencia"
         alert.contentText = "Se ha producido un error: ${message}"
@@ -74,11 +74,11 @@ class StudentCreatorView {
         alert.showAndWait()
     }
 
-    private fun returnStudentsView() {
+    private fun returnToStudentsView() {
         Window.getWindow().changeToView("students_view")
     }
 
     fun back(event: ActionEvent) {
-        returnStudentsView()
+        returnToStudentsView()
     }
 }

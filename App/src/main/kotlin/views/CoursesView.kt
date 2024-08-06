@@ -1,38 +1,60 @@
 package views
 
 import components.Course
-import connection.SQLiteConnection
+import components.CourseCard
 import getter.CourseGetter
 import javafx.event.ActionEvent
+import javafx.fxml.FXML
 import javafx.fxml.Initializable
+import javafx.geometry.Insets
+import javafx.scene.control.TextField
+import javafx.scene.input.KeyCode
+import javafx.scene.input.KeyEvent
+import javafx.scene.layout.AnchorPane
+import javafx.scene.layout.VBox
+import utils.Component
 import window.Window
 import java.net.URL
 import java.util.*
 
 class CoursesView : Initializable{
+    @FXML
+    lateinit var list : VBox
+    @FXML
+    lateinit var txtQuery : TextField
 
     fun createCourse(event: ActionEvent) {
         Window.getWindow().changeToView("course_creator_view")
     }
 
-    fun back(event: ActionEvent) {
-        val w = Window.getWindow()
-        w.changeToView("students_view")
-    }
-
     override fun initialize(location: URL?, resources: ResourceBundle?) {
-        SQLiteConnection.openConnection()
-        val courses : ArrayList<Course> = CourseGetter.getAll()
+        val courses = CourseGetter.getAll()
 
         if(courses.isEmpty()) {
             println("No existen cursos")
-            SQLiteConnection.closeConnection()
             return
         }
 
-        courses.forEach { course ->
-            println(course.name)
+        queryCourses(courses)
+    }
+
+    fun query(key : KeyEvent) {
+        if (key.code == KeyCode.ENTER)
+            queryCourses(CourseGetter.get(txtQuery.text))
+    }
+
+    private fun queryCourses(courses: ArrayList<Course> ) {
+        list.children.removeAll(list.children)
+        for (course in courses) {
+            val loader = Component<AnchorPane, CourseCard>("course_card", CourseCard(course, this))
+            val courseCard = loader.getComponent()
+            VBox.setMargin(courseCard, Insets(10.0, 10.0 , 0.0, 10.0))
+            list.children.add(courseCard)
         }
-        SQLiteConnection.closeConnection()
+    }
+
+    fun back(event: ActionEvent) {
+        val w = Window.getWindow()
+        w.changeToView("students_view")
     }
 }

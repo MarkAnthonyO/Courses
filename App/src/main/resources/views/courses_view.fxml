@@ -4,31 +4,34 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.CoursesView">
-   <TextField focusTraversable="false" layoutX="10.0" layoutY="44.0" prefHeight="30.0" prefWidth="1255.0" promptText="Buscar curso" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="54.0">
+   <TextField fx:id="txtQuery" focusTraversable="false" layoutX="10.0" layoutY="44.0" onKeyPressed="#query" prefHeight="30.0" prefWidth="1255.0" promptText="Buscar curso" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="54.0">
       <font>
-         <Font name="JetBrainsMono NF Regular" size="14.0" />
+         <Font name="JetBrainsMono NF Regular" size="16.0" />
       </font>
    </TextField>
-   <ScrollPane focusTraversable="false" layoutX="10.0" layoutY="84.0" prefHeight="628.0" prefWidth="1260.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="94.0" />
-   <Label alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="34.0" prefWidth="1260.0" text="Cursos" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+   <ScrollPane fitToWidth="true" focusTraversable="false" layoutX="10.0" layoutY="136.0" prefHeight="582.0" prefWidth="1260.0" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="146.0">
+      <content>
+         <VBox fx:id="list" prefWidth="100.0" />
+      </content></ScrollPane>
+   <Label alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="34.0" prefWidth="1260.0" style="-fx-text-fill: #ffaa00;" text="Cursos" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
       <font>
          <Font name="JetBrainsMono NF Regular" size="25.0" />
       </font>
    </Label>
-   <Button focusTraversable="false" layoutY="2.0" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
-      <effect>
-         <Bloom />
-      </effect>
-   </Button>
 
-   <Button focusTraversable="false" layoutY="2.0" mnemonicParsing="false" onAction="#createCourse" prefHeight="30.0" prefWidth="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="40.0">
-      <effect>
-         <Bloom />
-      </effect>
+   <Button focusTraversable="false" layoutX="10.0" layoutY="86.0" mnemonicParsing="false" onAction="#createCourse" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffaa00; -fx-text-fill: #fff;" text="+" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="96.0">
+      <font>
+         <Font name="Font Awesome 6 Free Solid" size="16.0" />
+      </font>
+   </Button>
+   <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" onAction="#back" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffaa00; -fx-background-radius: 0; -fx-text-fill: #fff; -fx-cursor: hand;" text="" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <font>
+         <Font name="Font Awesome 6 Free Solid" size="16.0" />
+      </font>
    </Button>
 </AnchorPane>

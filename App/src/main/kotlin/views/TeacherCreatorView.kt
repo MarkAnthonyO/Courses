@@ -47,7 +47,7 @@ class TeacherCreatorView {
         }
 
         showConfirmation()
-        returnTeacherView()
+        returnToTeacherView()
     }
 
     private fun showMessage() {
@@ -59,7 +59,7 @@ class TeacherCreatorView {
 
     private fun showError(message: String?) {
         val alert = Alert(Alert.AlertType.WARNING)
-        alert.title = "Adevertencia"
+        alert.title = "Advertencia"
         alert.contentText = "Se ha producido un error: ${message}"
         alert.showAndWait()
     }
@@ -67,7 +67,7 @@ class TeacherCreatorView {
     private fun showConfirmation() {
         val alert = Alert(Alert.AlertType.INFORMATION)
         alert.title = "Listo"
-        alert.contentText = "Se ha registrado al alumno, regresando a la vista de maestros"
+        alert.contentText = "Se ha registrado al maestro, regresando a la vista de maestros"
         alert.showAndWait()
     }
 
@@ -78,11 +78,11 @@ class TeacherCreatorView {
         alert.showAndWait()
     }
 
-    private fun returnTeacherView() {
+    private fun returnToTeacherView() {
         Window.getWindow().changeToView("teachers_view")
     }
 
     fun back(event: ActionEvent) {
-        returnTeacherView()
+        returnToTeacherView()
     }
 }

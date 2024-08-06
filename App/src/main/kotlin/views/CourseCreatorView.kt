@@ -1,9 +1,13 @@
 package views
 
+import components.Classroom
 import components.Course
 import components.SelectedStudent
 import components.Student
 import components.Teacher
+import generator.CourseGenerator
+import generator.StudentListGenerator
+import getter.CourseGetter
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.geometry.Insets
@@ -23,28 +27,36 @@ class CourseCreatorView {
     lateinit var txtTeacher: TextField
     @FXML
     lateinit var listStudent : VBox
+    @FXML
+    lateinit var txtClassroom : TextField
 
+    private var teacher : Teacher? = null
     private val students : ArrayList<Student> = ArrayList()
+    private var classroom : Classroom? = null
 
     fun addCourse(event: ActionEvent) {
-        val course = Course()
-
-        if(txtName.text.equals("")){
-            showMessage()
+        if(txtName.text.equals("") || teacher == null || students.isEmpty() || classroom == null){
+            showMissingDataMessage()
             return
         }
 
-        if(txtName.text.equals("")){
-            showMessage()
+        try {
+            val id = CourseGetter.getAll().last.id + 1
+            val course = Course(id, txtName.text, teacher, students, classroom)
+            CourseGenerator.generate(course)
+        } catch (ex : Exception) {
+            showErrorMessage(ex.message)
             return
         }
 
-        course.name = txtName.text
-        course.teacher = Window.getWindow().userData as Teacher
+        showConfirmation()
+        returnToCoursesView()
     }
 
     fun selectTeacher(event: ActionEvent) {
         val popWindow = Stage()
+        Window.getWindow().userData = null
+        popWindow.title = "Profesores"
         popWindow.scene = Scene(View("teacher_selector_view").getView())
         popWindow.showAndWait()
 
@@ -53,13 +65,9 @@ class CourseCreatorView {
             return
         }
 
-        val teacher = (Window.getWindow().userData as Teacher)
+        teacher = (Window.getWindow().userData as Teacher)
         Window.getWindow().userData = null
-        txtTeacher.text = teacher.name
-    }
-
-    fun back(event: ActionEvent) {
-        Window.getWindow().changeToView("courses_view")
+        txtTeacher.text = teacher!!.name
     }
 
     fun selectStudents(event: ActionEvent) {
@@ -67,6 +75,7 @@ class CourseCreatorView {
         Window.getWindow().userData = students
 
         val popWindow = Stage()
+        popWindow.title = "Estudiantes"
         popWindow.scene = Scene(View("students_selector_view").getView())
         popWindow.showAndWait()
 
@@ -92,10 +101,49 @@ class CourseCreatorView {
         }
     }
 
-    private fun showMessage() {
+    fun selectClassroom(event: ActionEvent) {
+        val popWindow = Stage()
+        Window.getWindow().userData = null
+        popWindow.title = "Salon"
+        popWindow.scene = Scene(View("classroom_selector_view").getView())
+        popWindow.showAndWait()
+
+        if (Window.getWindow().userData == null) {
+            println("No se especifico ningun salon")
+            return
+        }
+
+        classroom = (Window.getWindow().userData as Classroom)
+        Window.getWindow().userData = null
+        txtClassroom.text = classroom!!.name
+    }
+
+    private fun showMissingDataMessage() {
         val alert = Alert(Alert.AlertType.WARNING)
         alert.title = "Adevertencia"
         alert.contentText = "Faltan datos en el formulario"
         alert.showAndWait()
+    }
+
+    private fun showErrorMessage(message : String?) {
+        val alert = Alert(Alert.AlertType.WARNING)
+        alert.title = "Advertencia"
+        alert.contentText = "Se ha producido un error: ${message}"
+        alert.showAndWait()
+    }
+
+    private fun showConfirmation() {
+        val alert = Alert(Alert.AlertType.INFORMATION)
+        alert.title = "Listo"
+        alert.contentText = "Se ha registrado el curso, regresando a la vista de cursos"
+        alert.showAndWait()
+    }
+
+    private fun returnToCoursesView() {
+        Window.getWindow().changeToView("courses_view")
+    }
+
+    fun back(event: ActionEvent) {
+        returnToCoursesView()
     }
 }

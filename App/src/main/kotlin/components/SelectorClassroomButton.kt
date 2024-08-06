@@ -6,9 +6,9 @@ import javafx.scene.text.Font
 import javafx.scene.text.TextAlignment
 import window.Window
 
-class SelectorTeacherButton(private val element : Teacher) : Button() {
+class SelectorClassroomButton(private val element : Classroom) : Button() {
     init {
-        text = "${element.id} | ${element.name} ${element.lastname}"
+        text = "${element.id} | ${element.name}"
         font = Font("JetBrainsMono NF Regular", 16.0)
         textAlignment = TextAlignment.LEFT
         alignment = Pos.CENTER_LEFT
