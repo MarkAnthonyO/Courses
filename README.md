@@ -1,3 +1,2 @@
 # Courses
-
-## JDK FX - 21 
+**Required java version:** JDK FX - 21
